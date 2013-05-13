@@ -12,12 +12,11 @@ My final result (using IB with AutoLayout only):
 
 Before we discuss the specific constraints, here are three general hints, when using IB for AutoLayout.
 
-1. Your target should always be, to remove all automatic (implicit) constraints from Interface Builder. They are violet instead of blue, as user defined ones (explicit) are. **Get rid of the violet ones!** If you have left blue constraints only, you defined a complete layout, which correctly defines position and size of the view. ![constraint types](assets/editorvsuser.jpg "constraint types")
-
+1. Your target should always be, to remove all automatic (implicit) constraints from Interface Builder. They are violet instead of blue, as user defined ones (explicit) are. **Get rid of the violet ones!** If you have left blue constraints only, you defined a complete layout, which correctly defines position and size of the view.  
+   ![constraint types](assets/editorvsuser.jpg "constraint types")
 1. If you want a label (or another view) to resize according to its contents, e.g. the text of a label, you need to have no fixed width or fixed height constraints. (Depending which size should be flexible). To get rid of width and height constraints, you can simply select a view and choose **Editor > Size To Fit Content** (⌘=)
-
 1. If you are totally new to AutoLayout, the following buttons are your new best  friends. Use them to create constraints in Interface Builder:  
- ![constraint types](assets/autolayoutcontrols.png "constraint types")
+   ![constraint types](assets/autolayoutcontrols.png "constraint types")
 
 I do not show the basic UITableViewCellStyleDefault in my examples. You can figure it out yourself. But let's have a look at the other three layouts starting with **UITableViewCellStyleSubtitle**. This is a quite static layout. Two labels, one on the top, one on the bottom. But we want the length to be always as long as the text is, not any longer. Also the maximum length should be no longer than the cell itself minus 10px margin. How can we achieve this? Here is an overview of all constraints for both labels:
 
@@ -75,4 +74,4 @@ On the *detailTextLabel*, we have:
 
 In the end, if you did understand the system once and know the buttons in InterfaceBuilder it is straight forward and you can create layouts, that would have needed Code before AutoLayout. It's a very strong system. And if you do it with IB it is easier to debug and create, than by code. I recommend to always use IB. But there are layout, where you need to use code. E.g. if you want to have relative constraints like "1/2 of the height", or aspect ratio stuff like "height=width", or to do animations, etc.
 
-**<p style="text-align: center; color: #cc99ff;">Remember: Get rid of all violet constraints!</p>**
+#### Remember: Get rid of all violet constraints!

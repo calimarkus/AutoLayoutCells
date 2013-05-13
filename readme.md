@@ -4,7 +4,7 @@ Are you one of those persons, who did understand the Spring & Struts layout mode
 
 But if it comes to more complex layouts, the AutoLayout system can save you a lot of code. So in this article I want give a basic introduction to AutoLayout with InterfaceBuilder by showing, how to create the four well known standard UITableViewStyles of a UITableViewCell using AutoLayout:
 
-![Screenshot](assets/screenshot.png "Screenshot")
+![Screenshot](assets/screenshot.png "Screenshot")  
 *(Left original, right custom layouting)*
 
 Before discussing the specific constraints, here are three general hints, when using IB for AutoLayout.

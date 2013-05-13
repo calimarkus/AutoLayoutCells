@@ -31,6 +31,15 @@
     return 2;
 }
 
+- (NSString*)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section;
+{
+    if (section==0) {
+        return @"Tap a cell to change the texts of both labels, to see how the layout adapts.";
+    }
+    
+    return nil;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
 {
     // create / dequeue cell

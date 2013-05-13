@@ -31,11 +31,11 @@
     UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (cell == nil) {
         UITableViewCellStyle style;
-        if (indexPath.row == 0) {
+        if (indexPath.row == 1) {
             style = UITableViewCellStyleSubtitle;
-        } else if (indexPath.row == 1) {
-            style = UITableViewCellStyleValue2;
         } else if (indexPath.row == 2) {
+            style = UITableViewCellStyleValue2;
+        } else if (indexPath.row == 3) {
             style = UITableViewCellStyleValue1;
         } else {
             style = UITableViewCellStyleDefault;

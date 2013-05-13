@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ALCustomCellsViewController : UIViewController
+@interface ALCustomCellsViewController : UITableViewController
+
+@property (strong, nonatomic) IBOutlet UITableViewCell *subtitleCell;
+@property (strong, nonatomic) IBOutlet UITableViewCell *value2Cell;
+@property (strong, nonatomic) IBOutlet UITableViewCell *value1Cell;
+@property (strong, nonatomic) IBOutlet UITableViewCell *defaultCell;
 
 @end

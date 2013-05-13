@@ -14,14 +14,38 @@
 
 @implementation ALCustomCellsViewController
 
+- (void)viewDidLoad;
+{
+    [super viewDidLoad];
+    self.tableView.rowHeight = 57;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
+{
+    return 4;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
+{
+    if (indexPath.row == 1) {
+        return self.subtitleCell;
+    } else if (indexPath.row == 2) {
+        return self.value2Cell;
+    } else if (indexPath.row == 3) {
+        return self.value1Cell;
+    } else {
+        return self.defaultCell;
+    }
+}
+
 - (IBAction)tap:(UITapGestureRecognizer*)sender;
 {
-    if (sender.view.subviews.count < 2) {
+    if (sender.view.subviews.count < 1) {
         return;
     }
     
     UILabel *label1 = sender.view.subviews[0];
-    UILabel *label2 = sender.view.subviews[1];
+    UILabel *label2 = (sender.view.subviews.count > 1) ? sender.view.subviews[1] : nil;
     
     NSArray *texts = @[@"this is text",
                        @"Gustav Gans geht ganz gediegen.",

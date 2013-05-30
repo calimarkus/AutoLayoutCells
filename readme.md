@@ -1,4 +1,4 @@
-> This example project demonstrates how to use AutoLayout with IB on the example of the standard UITableViewCell styles.
+### Creating the four UITableViewCellStyles using AutoLayout
 
 Are you one of those persons, who did understand the Spring & Struts layout model perfectly. One of those, who was more likely to use some additional container views to reach a specific layout than starting to learn AutoLayout? I am one of them. And still, for simple layouts, I think the Spring & Struts model is both faster and easier.
 
@@ -6,6 +6,9 @@ But if it comes to more complex layouts, the AutoLayout system can save you a lo
 
 ![Screenshot](assets/screenshot.png "Screenshot")  
 *(Left original, right custom layouting)*
+
+
+### AutoLayout with InterfaceBuilder
 
 Before discussing the specific constraints, here are three general hints, when using IB for AutoLayout.
 
@@ -15,7 +18,11 @@ Before discussing the specific constraints, here are three general hints, when u
 1. If you are totally new to AutoLayout, the following buttons are your new best  friends. Use them to create constraints in Interface Builder:  
    ![constraint types](assets/autolayoutcontrols.png "constraint types")
 
-I do not show the basic UITableViewCellStyleDefault in my examples. You can figure it out yourself. But let's have a look at the other three layouts starting with **UITableViewCellStyleSubtitle**. This is a quite static layout. Two labels, one on the top, one on the bottom. But we want the length to be always as long as the text is, not any longer. Also the maximum length should be no longer than the cell itself minus 10px margin. How can we achieve this? Here is an overview of all constraints for both labels:
+I do not show the basic UITableViewCellStyleDefault in my examples. You can figure it out yourself. But let's have a look at the other three layouts starting with UITableViewCellStyleSubtitle. 
+
+### UITableViewCellStyleSubtitle
+
+This is a quite static layout. Two labels, one on the top, one on the bottom. But we want the length to be always as long as the text is, not any longer. Also the maximum length should be no longer than the cell itself minus 10px margin. How can we achieve this? Here is an overview of all constraints for both labels:
 
 ![uitableviewcellstylesubtitle](assets/uitableviewcellstylesubtitle.jpg "uitableviewcellstylesubtitle")
 
@@ -33,7 +40,9 @@ And on the *detailTextLabel*:
 1. The same as 5. from the first label: (0px margin between both labels)
 1. Also 10px margin to the left view border
 
-The next row is the **UITableViewCellStyleValue2**. We have a label with a fixed width on the left and a flexible width label on the right. As in the last layout, the right label should not grow any larger than the cell itself (minus 10px margin). These are the constraints:
+### UITableViewCellStyleValue2
+
+We have a label with a fixed width on the left and a flexible width label on the right. As in the last layout, the right label should not grow any larger than the cell itself (minus 10px margin). These are the constraints:
 
 ![uitableviewcellstylevalue2](assets/uitableviewcellstylevalue2.jpg "uitableviewcellstylevalue2")
 
@@ -51,7 +60,9 @@ On the *detailTextLabel*, we have:
 1. Same as 3. from the textLabel (Baseline alignment with the detailLabel)
 1. Same as 4. from the textLabel (6px margin to the textLabel)
 
-The third row in my example is the **UITableViewCellStyleValue1**. This is the most flexible one. Because both labels are next to each other, but they can both have any size they want (within the cell bounds). So if the first label needs most of the space, the second one shrinks and vice versa. These are the constraints:
+### UITableViewCellStyleValue1
+
+This is the most flexible one. Because both labels are next to each other, but they can both have any size they want (within the cell bounds). So if the first label needs most of the space, the second one shrinks and vice versa. These are the constraints:
 
 ![uitableviewcellstylevalue1](assets/uitableviewcellstylevalue1.jpg "uitableviewcellstylevalue1")
 
@@ -69,6 +80,8 @@ On the *detailTextLabel*, we have:
 1. 10px margin to the right
 1. The same as 4. from the textLabel (At least 10px spacing to the textLabel)
 
-In the end, if you did understand the system once and know the buttons in InterfaceBuilder it is straight forward and you can create layouts, that would have needed Code before AutoLayout. It's a very strong system. And if you do it with IB it is easier to debug and create, than by code. I recommend to always use IB. But there are layout, where you need to use code. E.g. if you want to have relative constraints like "1/2 of the height", or aspect ratio stuff like "height=width", or to do animations, etc.
+### Conclusion
+
+In the end, if you did understand the system once and know the buttons in InterfaceBuilder it is straight forward and you can create layouts, that would have needed code before AutoLayout. It's a very strong system. And if you do it with IB it is easier to debug and create, than by code. I recommend to always use IB. But there are layouts, where you need to use code. E.g. if you want to have relative constraints like "1/2 of the height", or aspect ratio stuff like "height=width", or to do animations, etc.
 
 #### Remember: Get rid of all violet constraints!
